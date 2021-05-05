@@ -1,5 +1,4 @@
 'use strict';
-let timee = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm'];
 // let shop1 = {
 //     name: 'Seattle',
 //     MinCust: 23,
@@ -197,21 +196,26 @@ let timee = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '
 // shop5.amounts()
 // console.log(shop5.cosTom);
 // shop5.firstResut();
-function Shopcookies(name, minCust, maxCust, AvgCookieSale, time, costom, avecookies, total) {
+let timee = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm'];
+let locationshop=[];
+
+function Shopcookies(name, minCust, maxCust, AvgCookieSale, ) {
     this.name = name;
     this.minCust = minCust;
     this.maxCust = maxCust;
     this.AvgCookieSale = AvgCookieSale;
-    this.time = time;
-    this.costom = costom;
-    this.avecookies = avecookies;
-    this.total = total;
+   
+    this.costom = [];
+    this.avecookies = [];
+    this.total = 0;
+    
+    locationshop.push(this);
 }
 function randum(min, max) {
     return Math.floor(Math.random() * (max - min) + min);
 }
 Shopcookies.prototype.cosTomperh = function () {
-    for (let i = 0; i < this.time.length; i++) {
+    for (let i = 0; i < timee.length; i++) {
         this.costom[i] = randum(this.minCust, this.maxCust);
     }
     console.log(this.costom);
@@ -230,37 +234,37 @@ Shopcookies.prototype.firstResult = function () {
     let td = document.createElement('td');
     article.appendChild(td);
 
-    for (let i = 0; i < this.time.length; i++) {
+    for (let i = 0; i < timee.length; i++) {
         let th = document.createElement('th');
         td.appendChild(th);
-        th.textContent = this.time[i];
+        th.textContent = timee[i];
     }
 
 
 }
 
-let shop1 = new Shopcookies('Seattle', 23, 65, 6.3, ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm'], [], [], 0);
+let shop1 = new Shopcookies('Seattle', 23, 65, 6.3);
 console.log(shop1);
 shop1.cosTomperh();
 shop1.averagkoo();
 shop1.firstResult();
 
-let shop2 = new Shopcookies('Tokyo', 3, 24, 1.2, ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm'], [], [], 0);
+let shop2 = new Shopcookies('Tokyo', 3, 24, 1.2);
 console.log(shop2);
 shop1.cosTomperh();
 shop1.averagkoo();
 
-let shop3 = new Shopcookies('Dubai', 11, 38, 3.7, ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm'], [], [], 0);
+let shop3 = new Shopcookies('Dubai', 11, 38, 3.7);
 console.log(shop3);
 shop1.cosTomperh();
 shop1.averagkoo();
 
-let shop4 = new Shopcookies('Paris', 20, 38, 2.3, ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm'], [], [], 0);
+let shop4 = new Shopcookies('Paris', 20, 38, 2.3);
 console.log(shop4);
 shop1.cosTomperh();
 shop1.averagkoo();
 
-let shop5 = new Shopcookies('Lima', 2, 16, 4.6, ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm'], [], [], 0);
+let shop5 = new Shopcookies('Lima', 2, 16, 4.6);
 console.log(shop5);
 shop1.cosTomperh();
 shop1.averagkoo();
