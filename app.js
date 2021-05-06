@@ -196,19 +196,20 @@
 // shop5.amounts()
 // console.log(shop5.cosTom);
 // shop5.firstResut();
-let timee = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm'];
-let locationshop=[];
+let timee = ['6 am', '7 am', '8 am', '9 am', '10 am', '11 am', '12 pm', '1 pm', '2 pm', '3 pm', '4 pm', '5 pm', '6 pm', '7 pm'];
+let locationshop = [];
+let totalloc = 0;
 
-function Shopcookies(name, minCust, maxCust, AvgCookieSale, ) {
+function Shopcookies(name, minCust, maxCust, AvgCookieSale,) {
     this.name = name;
     this.minCust = minCust;
     this.maxCust = maxCust;
     this.AvgCookieSale = AvgCookieSale;
-   
+
     this.costom = [];
     this.avecookies = [];
     this.total = 0;
-    
+
     locationshop.push(this);
 }
 function randum(min, max) {
@@ -227,44 +228,116 @@ Shopcookies.prototype.averagkoo = function () {
     }
     console.log(this.total);
 }
+
 let Parent = document.getElementById('purchased');
-Shopcookies.prototype.firstResult = function () {
-    let article = document.createElement('article');
-    Parent.appendChild(article);
-    let td = document.createElement('td');
-    article.appendChild(td);
+
+
+let td = document.createElement('table');
+
+Parent.appendChild(td);
+
+function firstResult() {
+    let tr = document.createElement('tr')
+    td.appendChild(tr);
+
+    let thr = document.createElement('th')
+    tr.appendChild(thr);
+    thr.textContent = 'Name/time';
+
+
 
     for (let i = 0; i < timee.length; i++) {
         let th = document.createElement('th');
-        td.appendChild(th);
+        tr.appendChild(th);
         th.textContent = timee[i];
+
     }
+    let totalth = document.createElement('th');
+    tr.appendChild(totalth);
+    totalth.textContent = 'daily location total';
+
+
+}
+firstResult();
+Shopcookies.prototype.tabledata = function () {
+    let datar = document.createElement('tr')
+    td.appendChild(datar);
+
+    let indata = document.createElement('td');
+    datar.appendChild(indata);
+    indata.textContent = this.name;
+
+    for (let i = 0; i < timee.length; i++) {
+        let tddata = document.createElement('td');
+        datar.appendChild(tddata);
+        tddata.textContent = this.avecookies[i];
+    }
+    let totalfortime = document.createElement('td')
+    datar.appendChild(totalfortime);
+    totalfortime.textContent = this.total;
+
 
 
 }
 
+function tabelfooter() {
+    let tabelfooterr = document.createElement('tr');
+    td.appendChild(tabelfooterr);
+
+    let footertd = document.createElement('td');
+    tabelfooterr.appendChild(footertd);
+    footertd.textContent = 'Total';
+
+    for (let i = 0; i < timee.length; i++) {
+        let finaLtotel = 0;
+
+        for (let s = 0; s < locationshop.length; s++) {
+            finaLtotel += locationshop[s].avecookies[i];
+
+        }
+
+        let totalfooter = document.createElement('td');
+        tabelfooterr.appendChild(totalfooter);
+        totalfooter.textContent = finaLtotel;
+        totalloc += finaLtotel;
+
+    }
+    let lastfooterr = document.createElement('td');
+    tabelfooterr.appendChild(lastfooterr);
+    lastfooterr.textContent = totalloc ;
+
+}
 let shop1 = new Shopcookies('Seattle', 23, 65, 6.3);
 console.log(shop1);
 shop1.cosTomperh();
 shop1.averagkoo();
-shop1.firstResult();
+
 
 let shop2 = new Shopcookies('Tokyo', 3, 24, 1.2);
-console.log(shop2);
+
 shop1.cosTomperh();
 shop1.averagkoo();
 
 let shop3 = new Shopcookies('Dubai', 11, 38, 3.7);
-console.log(shop3);
+
 shop1.cosTomperh();
 shop1.averagkoo();
 
 let shop4 = new Shopcookies('Paris', 20, 38, 2.3);
-console.log(shop4);
+
 shop1.cosTomperh();
 shop1.averagkoo();
 
 let shop5 = new Shopcookies('Lima', 2, 16, 4.6);
-console.log(shop5);
+
 shop1.cosTomperh();
 shop1.averagkoo();
+
+for (let i = 0; i < locationshop.length; i++) {
+    locationshop[i].cosTomperh();
+    locationshop[i].averagkoo();
+    locationshop[i].tabledata();
+
+
+}
+tabelfooter();
