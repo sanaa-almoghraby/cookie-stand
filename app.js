@@ -309,29 +309,24 @@ function tabelfooter() {
 }
 let shop1 = new Shopcookies('Seattle', 23, 65, 6.3);
 console.log(shop1);
-shop1.cosTomperh();
-shop1.averagkoo();
+
 
 
 let shop2 = new Shopcookies('Tokyo', 3, 24, 1.2);
 
-shop1.cosTomperh();
-shop1.averagkoo();
+
 
 let shop3 = new Shopcookies('Dubai', 11, 38, 3.7);
 
-shop1.cosTomperh();
-shop1.averagkoo();
+
 
 let shop4 = new Shopcookies('Paris', 20, 38, 2.3);
 
-shop1.cosTomperh();
-shop1.averagkoo();
+
 
 let shop5 = new Shopcookies('Lima', 2, 16, 4.6);
 
-shop1.cosTomperh();
-shop1.averagkoo();
+
 
 for (let i = 0; i < locationshop.length; i++) {
     locationshop[i].cosTomperh();
