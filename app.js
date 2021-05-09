@@ -1,4 +1,5 @@
 'use strict';
+
 // let shop1 = {
 //     name: 'Seattle',
 //     MinCust: 23,
@@ -196,6 +197,7 @@
 // shop5.amounts()
 // console.log(shop5.cosTom);
 // shop5.firstResut();
+
 let timee = ['6 am', '7 am', '8 am', '9 am', '10 am', '11 am', '12 pm', '1 pm', '2 pm', '3 pm', '4 pm', '5 pm', '6 pm', '7 pm'];
 let locationshop = [];
 let totalloc = 0;
@@ -229,7 +231,10 @@ Shopcookies.prototype.averagkoo = function () {
     console.log(this.total);
 }
 
+
+let Parent = document.getElementById('cookie');
 let Parent = document.getElementById('purchased');
+
 
 
 let td = document.createElement('table');
@@ -259,6 +264,58 @@ function firstResult() {
 
 }
 firstResult();
+
+
+Shopcookies.prototype.tabledata = function () {
+    let datar = document.createElement('tr')
+    td.appendChild(datar);
+
+    let indata = document.createElement('td');
+    datar.appendChild(indata);
+    indata.textContent = this.name;
+
+    for (let i = 0; i < timee.length; i++) {
+        let tddata = document.createElement('td');
+        datar.appendChild(tddata);
+        tddata.textContent = this.avecookies[i];
+    }
+    let totalfortime = document.createElement('td')
+    datar.appendChild(totalfortime);
+    totalfortime.textContent = this.total;
+
+
+
+}
+//-----------------------------------------------------------
+function tabelfooter() {
+    let tabelfooterr = document.createElement('tr');
+    td.appendChild(tabelfooterr);
+
+    let footertd = document.createElement('td');
+    tabelfooterr.appendChild(footertd);
+    footertd.textContent = 'Total';
+
+    for (let i = 0; i < timee.length; i++) {
+        let finaLtotel = 0;
+
+        for (let s = 0; s < locationshop.length; s++) {
+            finaLtotel += locationshop[s].avecookies[i];
+
+        }
+
+        let totalfooter = document.createElement('td');
+        tabelfooterr.appendChild(totalfooter);
+        totalfooter.textContent = finaLtotel;
+        totalloc += finaLtotel;
+
+    }
+    let lastfooterr = document.createElement('td');
+    tabelfooterr.appendChild(lastfooterr);
+    lastfooterr.textContent = totalloc;
+
+}
+//------------------------------------------------------
+
 Shopcookies.prototype.tabledata = function () {
     let datar = document.createElement('tr')
     td.appendChild(datar);
@@ -335,4 +392,29 @@ for (let i = 0; i < locationshop.length; i++) {
 
 
 }
+
+let form = document.getElementById('SalmonCookiesform');
+form.addEventListener('submit', formsup);
+function formsup(event) {
+    event.preventDefault();
+    let name = event.target.nameco.value;
+    console.log(name);
+    let minVal = event.target.minn.value;
+    console.log(minVal);
+    let maxVal = event .target .maxn.value;
+    let avgNum = event.target.avgh.value;
+    console.log(avgNum);
+
+    let newCuntri = new Shopcookies(name,minVal,maxVal,avgNum);
+    td.removeChild(td.lastChild);
+    locationshop.push(newCuntri);
+
+    newCuntri.cosTomperh();
+    newCuntri.averagkoo();
+    newCuntri.tabledata();
+
+    tabelfooter(); 
+    form.reset();
+}
+tabelfooter();
 tabelfooter();
