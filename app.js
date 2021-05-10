@@ -236,6 +236,7 @@ let Parent = document.getElementById('cookie');
 
 
 
+
 let td = document.createElement('table');
 
 Parent.appendChild(td);
@@ -417,3 +418,4 @@ function formsup(event) {
 }
 tabelfooter();
 tabelfooter();
+
