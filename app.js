@@ -233,7 +233,6 @@ Shopcookies.prototype.averagkoo = function () {
 
 
 let Parent = document.getElementById('cookie');
-let Parent = document.getElementById('purchased');
 
 
 
