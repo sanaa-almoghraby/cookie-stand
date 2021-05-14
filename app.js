@@ -370,17 +370,10 @@ console.log(shop1);
 
 
 let shop2 = new Shopcookies('Tokyo', 3, 24, 1.2);
-
-
-
 let shop3 = new Shopcookies('Dubai', 11, 38, 3.7);
 
 
-
 let shop4 = new Shopcookies('Paris', 20, 38, 2.3);
-
-
-
 let shop5 = new Shopcookies('Lima', 2, 16, 4.6);
 
 
@@ -417,4 +410,4 @@ function formsup(event) {
     form.reset();
 }
 tabelfooter();
-tabelfooter();
+
