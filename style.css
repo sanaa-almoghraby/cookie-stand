@@ -1,63 +1,205 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Reggae+One&display=swap');
 table, tr, th ,td{
     border: 1px solid black;
+    border-radius: 6px;
+    background-color:#060C36 ;
+    color: #FFC48A;
+    padding: 5px;
+    text-align: center;
+    margin: 5px;
+    
+
 }
+.salesimg img{
+    width: 80%;
+    height: 50%;
+}
+table{
+    margin-left:15%;
+}
+fieldset{
+    margin:2em 0;
+    padding: 1em 2em;
+    border:solid 1px #060C36 ;
+    border-radius: 6px;
+    font-family: 'Indie Flower', cursive;
+color: #FFC48A;
+background-color: #060C36;
+font-size: 17px;
+box-shadow: 5px 10px #888888;
+
+}
+legend{
+    font-family: 'Pacifico', cursive;
+font-size: 30px;
+}
+input{
+padding: 5px;
+}
+/*-----------------------------------------------------------------------------------*/
 * {
     box-sizing: border-box;
 }
 body {
-    font-family: Arial, Helvetica, sans-serif;
-    padding: 10px;
-    background-color: #A0C2F5;
-    width: 90%;
+    height: 89%;
+    width: 98%;
+    background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQznDWkoclScN9U631RYb1BiEC7W1DiM9Ewiw&usqp=CAU);
     margin: 10px;
 }
 header{
-    background-color: #85A1CC;
-    padding: 30px;
+    background-color: #060C36;
+    font-family: 'Pacifico', cursive;
+    display: flex;
+    font-size: 20px;
+    height: 160px;
+    width: 100%;
+    border-style: outset; 
+    padding: 5px;   
+    border-radius: 5px;
+
 }
 h1{
     text-align: center;
+    color: #FFC48A;
 }
+header img{
+    width: 150px;
+    height: 130px;
+    float:left;
+    margin: 10px;
+margin-left: auto;
+}
+@keyframes big{
+    to {
+        transform: scale(1.5);
+    }
+}
+ul:hover .animationf{
+    animation: big 1s ease ;
+}
+ 
+
 nav ul li{
     display: inline-block;
     padding: 20px;
     margin-left: 20px;
+    margin-bottom: auto;
+    text-align: center;
 }
 nav ul li a {
     text-decoration: none;
-    color: #F2F0F5;
+    color: #FFC48A;
     font-weight: bold;
     display: inline-block;
+    font-size:30px;
 
 }
-h4{
-    font-weight: bold;
-    padding: 10px 0;
+.firstdiv{
+    margin: 10px;
+    border-style: outset;
+    padding: 5px;   
+    color: #060C36;
+    font-family: 'Indie Flower', cursive;
+    background-color: #FFC48A;
+    border-radius: 5px;
+
 }
-#first{
-    margin: 20px ;
-    padding: 10px;
+h2 {
     text-align: center;
+    font-size: 35px;
 }
-#styleimg{
-  display: inline;
-  
-  
+.maindiv{
+    display: inline-block;
 }
-#styleheader{
-    font-size: 50px;
-    font-weight: bold;
-    width: 150%;
-    height: 150px;
-    float: right;
-    width: 25%;
+.firstdiv img{
+    width: 80px;
+    height: 80px;
+    float: left;
+    margin: 2%;
 }
-.sanaa{
-    width: 100%;
-    height: 200px;
+p{
+    text-align: justify;
+    font-family: 'Reggae One', cursive;
+    font-size: 20px;
+}
+.divtow{
+    position: relative;
+    z-index: 10;
+}
+h4{
+      font-family: 'Indie Flower', cursive;
+      text-align: center;
+    font-size: 35px;
+    color: #060C36;
+
+}
+h5{
+    color: #FFC48A;
+    font-family: 'Indie Flower', cursive;
+    font-size: 25px;
+
 }
 img{
     width: 200px;
   height: 200px;
 
+}
+.divtow div{
+    border: 2px solid #FFC48A;
+    border-radius: 5px;
+    background-color:#060C36 ;
+    color: #FFC48A;
+    margin: 10px;
+    border-style: double;
+    border-width: 15px;
+    width: 40%;
+    padding: 5px;
+}
+.divtow img{
+    
+    border-radius: 50%;
+     display: inline;
+     width: 50%;  
+  
+}
+section div{
+    border: 2px solid #FFC48A;
+    border-radius: 5px;
+    background-color:#060C36 ;
+    color: #FFC48A;
+    margin: 10px;
+    border-style: double;
+    border-width: 15px;
+    width: 40%;
+    padding: 5px;
+    float:right;
+
+}
+section img{
+    border-radius: 50%;
+    width: 50%;  
+
+}
+
+.myfooter{
+    background-color: #060C36;
+    font-family: 'Pacifico', cursive;
+    
+    font-size: 20px;
+    height: 160px;
+    width: 100%;
+    border-style: outset; 
+    padding: 5px;   
+    border-radius: 5px;
+color: #FFC48A;
+}
+.myfooter a img{
+    height: auto;
+    width: auto;
+    margin:3px;
+}
+.myfooter p {
+    margin-top: auto;
 }
